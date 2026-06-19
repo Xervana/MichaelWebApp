@@ -1,31 +1,42 @@
 # Personal Banking Web App
 
-A static, BDO-inspired personal banking landing page (blue/red "We find ways" theme).
-Pure HTML + CSS — no build step required.
+A BDO-inspired personal banking landing page (blue/red "We find ways" theme),
+built with **Next.js** (Pages Router) — same tech stack and folder structure as
+the PowerIntake-WebApp project (Next.js 16 + Tailwind v4, JavaScript/`.jsx`,
+`@/*` import alias, static `output: "export"`).
 
-## Files
-- `index.html` — the page
-- `styles.css` — the theme
-- `vercel.json` — tells Vercel this is a static site (no build)
+## Tech stack
+- **Next.js 16** (Pages Router) + **React 19**
+- **Tailwind CSS v4** (`@tailwindcss/postcss`, `styles/globals.css`)
+- JavaScript (`.jsx`), shadcn-style conventions (`components.json`, `lib/utils.js`)
+- `@/*` path alias via `jsconfig.json`
+- Static export (`output: "export"`)
 
-## Deploy to Vercel
-This site has **no build step**. The included `vercel.json` overrides any
-"Create React App" preset so Vercel just serves the static files.
-
-1. Push to GitHub.
-2. Import the repo in Vercel.
-3. Deploy — `vercel.json` handles the rest.
-
-> If a previous deploy failed with `react-scripts: command not found`, that was
-> Vercel's dashboard running `react-scripts build` on a non-React project.
-> The `vercel.json` here disables that. You can also clear the **Build Command**
-> and set **Framework Preset = Other** in Project Settings → Build & Output.
+## Structure
+- `pages/_app.jsx` — app shell, imports global styles
+- `pages/_document.jsx` — base HTML document
+- `pages/index.jsx` — the landing page (page `<title>`/meta via `next/head`)
+- `components/Header.jsx` — header with mobile nav toggle (`useState`)
+- `components/Footer.jsx` — footer
+- `styles/globals.css` — Tailwind import + the banking theme
+- `lib/utils.js` — `cn()` helper
 
 ## Run locally
-Open `index.html` in a browser, or serve it:
+The dev/start scripts are hardcoded to **port 3000**.
 
 ```bash
-python3 -m http.server 3000
+npm install
+npm run dev      # http://localhost:3000
 ```
+
+## Build (static export)
+```bash
+npm run build    # outputs static site to ./out
+```
+
+## Deploy to Vercel
+1. Push to GitHub.
+2. Import the repo in Vercel — it auto-detects Next.js (`vercel.json` sets the preset).
+3. Deploy.
 
 > Demo project. Not affiliated with any bank.

@@ -1,3 +1,9 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────────────────────────────────
+   Personal Banking theme — "We find ways" (blue/red)
+   Plain CSS preserved verbatim so the page renders identically.
+   ──────────────────────────────────────────────────────────────────────── */
 :root {
   --blue: #003da5;
   --blue-dark: #002e6d;
