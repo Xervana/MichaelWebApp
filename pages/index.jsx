@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ExploreSections from "@/components/ExploreSections";
 
 export default function Home() {
   return (
@@ -52,9 +53,13 @@ export default function Home() {
               one secure place.
             </p>
             <div className="hero__cta">
-              <a href="#accounts" className="btn btn--primary">
-                Open an Account
-              </a>
+              <button
+                type="button"
+                className="btn btn--primary"
+                onClick={() => window.trueengage?.openView("video")}
+              >
+                Inquire
+              </button>
               <a href="#" className="btn btn--ghost">
                 Apply for a Card
               </a>
@@ -89,19 +94,26 @@ export default function Home() {
       {/* Quick links */}
       <section className="quicklinks">
         <div className="container quicklinks__grid">
-          <a href="#accounts" className="ql">
+          <a
+            href="#"
+            className="ql"
+            onClick={(e) => {
+              e.preventDefault();
+              window.trueengage?.openView("video");
+            }}
+          >
             <span className="ql__icon">&#128176;</span>
-            <span className="ql__label">Open an Account</span>
+            <span className="ql__label">Inquire</span>
           </a>
-          <a href="#cards" className="ql">
+          <a href="#explore-cards" className="ql">
             <span className="ql__icon">&#128179;</span>
             <span className="ql__label">Apply for a Card</span>
           </a>
-          <a href="#loans" className="ql">
+          <a href="#explore-loans" className="ql">
             <span className="ql__icon">&#127968;</span>
             <span className="ql__label">Get a Loan</span>
           </a>
-          <a href="#invest" className="ql">
+          <a href="#" className="ql">
             <span className="ql__icon">&#128200;</span>
             <span className="ql__label">Start Investing</span>
           </a>
@@ -112,82 +124,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products */}
       <main>
-        <section className="section" id="accounts">
-          <div className="container">
-            <header className="section__head">
-              <h2 className="section__title">Explore our products</h2>
-              <p className="section__lede">
-                Everything you need to bank, borrow, protect, and invest.
-              </p>
-            </header>
-            <div className="cards">
-              <article className="pcard" id="cards-anchor">
-                <div className="pcard__band pcard__band--blue"></div>
-                <h3>Deposit Accounts</h3>
-                <p>
-                  Savings, checking and time deposits with easy access and
-                  competitive rates.
-                </p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-              <article className="pcard" id="cards">
-                <div className="pcard__band pcard__band--red"></div>
-                <h3>Credit Cards</h3>
-                <p>
-                  Rewards, cashback, and travel cards designed around how you
-                  spend.
-                </p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-              <article className="pcard" id="loans">
-                <div className="pcard__band pcard__band--blue"></div>
-                <h3>Loans</h3>
-                <p>
-                  Home, auto, and personal loans with flexible terms and fast
-                  approval.
-                </p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-              <article className="pcard" id="insure">
-                <div className="pcard__band pcard__band--red"></div>
-                <h3>Insurance</h3>
-                <p>
-                  Protect what matters with life, health, and property coverage.
-                </p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-              <article className="pcard" id="invest">
-                <div className="pcard__band pcard__band--blue"></div>
-                <h3>Investments</h3>
-                <p>Funds, bonds, and trust products to help your money grow.</p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-              <article className="pcard">
-                <div className="pcard__band pcard__band--red"></div>
-                <h3>Digital Banking</h3>
-                <p>
-                  Bank anytime with secure mobile and online banking on any
-                  device.
-                </p>
-                <a href="#" className="link">
-                  Learn more &rarr;
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+        {/* Explore detail sections */}
+        <ExploreSections />
 
         {/* Promo banner */}
         <section className="promo" id="promos">
@@ -202,7 +141,7 @@ export default function Home() {
                 minutes.
               </p>
             </div>
-            <a href="#accounts" className="btn btn--primary">
+            <a href="#explore-accounts" className="btn btn--primary">
               Get started
             </a>
           </div>

@@ -14,10 +14,10 @@ export default function Footer() {
         </div>
         <div className="footer__col">
           <h4>Products</h4>
-          <a href="#accounts">Accounts</a>
-          <a href="#cards">Cards</a>
-          <a href="#loans">Loans</a>
-          <a href="#invest">Investments</a>
+          <a href="#explore-accounts">Accounts</a>
+          <a href="#explore-cards">Cards</a>
+          <a href="#explore-loans">Loans</a>
+          <a href="#">Investments</a>
         </div>
         <div className="footer__col">
           <h4>Support</h4>

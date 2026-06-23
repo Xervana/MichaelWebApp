@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -6,18 +7,16 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <a href="/" className="brand" aria-label="Home">
+        <Link href="/" className="brand" aria-label="Home">
           <span className="brand__mark">BDC</span>
           <span className="brand__tag">
             We find ways<span className="brand__dot">.</span>
           </span>
-        </a>
+        </Link>
         <nav className={`nav${open ? " nav--open" : ""}`} aria-label="Primary">
-          <a href="#accounts">Accounts</a>
-          <a href="#cards">Cards</a>
-          <a href="#loans">Loans</a>
-          <a href="#insure">Insurance</a>
-          <a href="#invest">Invest</a>
+          <a href="#explore-accounts">Accounts</a>
+          <a href="#explore-cards">Cards</a>
+          <a href="#explore-loans">Loans</a>
           <a href="#promos">Promos</a>
         </nav>
         <a href="#" className="btn btn--login">
