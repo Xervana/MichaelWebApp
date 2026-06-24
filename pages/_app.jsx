@@ -25,7 +25,12 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Script
-        src="https://asset.trueengage.com/accounts/7d0e4220-8a58-43d2-9711-d7cbe66e1479/widget.js"
+        //TE Widget Account
+        //src="https://asset.trueengage.com/accounts/7d0e4220-8a58-43d2-9711-d7cbe66e1479/widget.js"
+        
+        //Trends Widget Account
+        src="https://asset.trueengage.com/accounts/067e40c5-c0a6-49be-a2db-241720a76cb5/widget.js"
+        
         strategy="afterInteractive"
       />
       <Component {...pageProps} />
